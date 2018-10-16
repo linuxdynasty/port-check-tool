@@ -45,7 +45,6 @@ type Result struct {
 // EnvStringToReader will grab an ENV variable and convert it to  an io.Reader interface
 func EnvStringToReader(env string) (reader io.Reader, err error) {
 	envData := os.Getenv(env)
-	fmt.Println(envData)
 	if envData == "" {
 		return reader, fmt.Errorf("ENV variable %s does not exist", env)
 	}

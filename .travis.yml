@@ -2,7 +2,10 @@ language: go
 sudo: false
 go:
   - tip
-before_install:
-  - go get github.com/mattn/goveralls
 script:
-  - $GOPATH/bin/goveralls -service=travis-ci
+  - go test -race -coverprofile=coverage.txt -covermode=atomic
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+env:
+  global:
+  - secure: pKFFhHapxYdQme7m7Csxv8+VeF9bz1OTaK8gF32gOhwDxPe9CBG3gAgSU27k4NFS0uL41ydBm+NdBBCjWT7co8QyW+S+aGJJTMwupiExcvYcQM2i9cHLKcGeH2chPdgRKrJvP6TvbOmZb+70JGC5HOc9uqztqTBSHy4+dFJfoukNKXR62kL6GQ8vOiTknvozW1sPSW7cs33Ii12UQzQMSLx9LNtDK2xpStJRzkaBn+/oh1Yv2AArm57Ms1LMMiPkLQelkOezQ3f0sNmdfqrJq6gnw4iZq2zOK3ufiGFulm6IdD1p7L2HMSZzi9mw7++AnTluk6XbSv+Ffm0WXTzB3NHAtKRnspTDEmeTNR13HRGa6XwJin+EUo3V3Nz8P/HvhqrKfusQ2xTmRY53rFseEx/qwubfPEMtC0gS/ZosvuNrwJddT2/M4BhvzAXbHMPkinK/y5np5wElgEpBW6bopNygrmQ9xJ3dxOcroHsl5J726NOnvSFyrC4scCWXiiX2ryuEUVlWIMGG10s8ManCbNn8uGo4VfsWbYnR+mLE7eiLBQFzgRIsvRh08CKKOwtVfekP5Hw78jxCiPeeGnTdChV+pSWmsGgIHJagdSWSmoUI9Idg6cpVlmEPJBA1s1A1TWWxkFMWmjyYKXJIzuzL0Uk4rDhZfXSwobro/qCcGic=

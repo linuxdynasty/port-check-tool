@@ -109,6 +109,6 @@ func main() {
 		go hostToRun.Run(resultsQueue, client)
 	}
 
-	go ReadResults(resultsQueue, hostCount)
+	ReadResults(resultsQueue, hostCount)
 
 }

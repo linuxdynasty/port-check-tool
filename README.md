@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/linuxdynasty/port-check-tool.svg?branch=master)](https://travis-ci.org/linuxdynasty/port-check-tool)
+[![Coverage status](https://codecov.io/gh/linuxdynasty/port-check-tool/branch/master/graph/badge.svg)](https://codecov.io/github/linuxdynasty/port-check-tool?branch=master)
 # port-check-tool
 
 Quick app to check the status of a tcp port
